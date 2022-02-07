@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced CSS Selectors</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body>
+    <h1>Advanced CSS Selectors</h1>
+
+    <section class="the-ones-you-know">
+        <h2>Basic selectors</h2>
+        <p>element selector - <code>p</code></p>
+        <p>class selector - <code>.class</code></p>
+        <p>id selector - <code>#id</code> </p>
+    </section>
+
+    <section class="universal">
+        <h2><span>*</span>Universal</h2>
+        <p>This selects EVERYTHING. Every single thing<br> (except ::before and ::after...).</p>
+        <ul>
+            <li>Every</li>
+            <li>Single</li>
+            <li>Thing</li>
+            <li><a href="#">Everything</a></li>
+        </ul>
+        <code>Yup, even this, and, well, everything else too.</code>
+    </section>
+
+    <section class="direct-children">
+        <h2><span>></span>Direct children</h2>
+        <p>You can create selectors like this:</p>
+        <code>.direct-children p</code>
+        <p>That will select all paragraphs inside of .direct-children</p>
+        <div class="example">
+            <p>But <code>.direct-child > p</code> will not select this paragraph.</p>
+        </div>
+    </section>
+
+    <section class="adjacent-sibling">
+        <h2> <span>+</span>Adjacent sibling</h2>
+        <div class="box"></div>
+        <div class="box"></div>
+        <span>smth</span>
+        <div class="box"></div>
+        <div class="box"></div>
+
+        <h4 style="margin-top: 2rem; font-size: 2rem; margin-bottom: 0">title</h4>
+        <p>subtitle</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt eligendi esse ut, quis quam laboriosam
+            voluptate, suscipit voluptatum accusantium autem quasi explicabo consequuntur sit nostrum similique omnis,
+            fuga dolores. Minima.</p>
+    </section>
+
+    <section class="general-sibling">
+        <h2><span>~</span>General Sibling</h2>
+        <div class="box"></div>
+        <div class="box"></div>
+        <span>smth</span>
+        <div class="box"></div>
+        <div class="box"></div>
+
+        <h4 style="margin-top: 2rem; font-size: 2rem; margin-bottom: 0">title</h4>
+        <p>subtitle</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt eligendi esse ut, quis quam laboriosam
+            voluptate, suscipit voluptatum accusantium autem quasi explicabo consequuntur sit nostrum similique omnis,
+            fuga dolores. Minima.</p>
+        <a href="#">something in the middle</a>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt eligendi esse ut, quis quam laboriosam
+            voluptate, suscipit voluptatum accusantium autem quasi explicabo consequuntur sit nostrum similique omnis,
+            fuga dolores. Minima.</p>
+
+        <div>some text</div>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt eligendi esse ut, quis quam laboriosam
+            voluptate, suscipit voluptatum accusantium autem quasi explicabo consequuntur sit nostrum similique omnis,
+            fuga dolores. Minima.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt eligendi esse ut, quis quam laboriosam
+            voluptate, suscipit voluptatum accusantium autem quasi explicabo consequuntur sit nostrum similique omnis,
+            fuga dolores. Minima.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt eligendi esse ut, quis quam laboriosam
+            voluptate, suscipit voluptatum accusantium autem quasi explicabo consequuntur sit nostrum similique omnis,
+            fuga dolores. Minima.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt eligendi esse ut, quis quam laboriosam
+            voluptate, suscipit voluptatum accusantium autem quasi explicabo consequuntur sit nostrum similique omnis,
+            fuga dolores. Minima.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt eligendi esse ut, quis quam laboriosam
+            voluptate, suscipit voluptatum accusantium autem quasi explicabo consequuntur sit nostrum similique omnis,
+            fuga dolores. Minima.</p>
+    </section>
+
+    <section class="child-selector">
+        <h2><span>:</span>Child selector pseudo class</h2>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+    </section>
+
+
+
+    <section class="before-after">
+        <h2><span>::</span>Pseudo Elements</h2>
+        <div class="box">Some text</div>
+
+    </section>
+
+    <section class="attribute">
+        <h2><span>[ ]</span>Attribute </h2>
+        <a href="https://www.google.com" class="link-one">Google</a>
+        <a href="https://www.google.ca" class="link-two">Google Canada</a>
+        <a href="about.html" class="link-three">About page</a>
+        <a href="http://awesomesocialnetwork.com" class="link-four" target="_blank">Socialize</a>
+        <a href="ebook.pdf" class="link-five">PDF file</a>
+        <a href="#" class="another-link">Yet another link</a>
+    </section>
+
+
+    <section class="inputs">
+        <h2><span>i</span>Inputs</h2>
+
+        <label for="username">Username</label>
+        <input id="username" type="text" placeholder="type a Username" />
+
+        <label for="name">Name</label>
+        <input id="name" type="text" placeholder="type your user name" />
+
+        <label for="email">Email</label>
+        <input id="email" type="email" placeholder="type your user email" />
+
+        <label for="range">In range</label>
+        <input id="range" type="number" min="7" max="12" value="8" />
+
+        <label for="check">are you a teacher?</label>
+        <input id="check" type="checkbox" checked style="width:auto" />
+    </section>
+
+    <section class="target-selector">
+        <h2><span>:</span>(bonus)Target selector pseudo class</h2>
+
+        <div> <a href="#home">Home</a>
+            <a href="#about">About</a>
+        </div>
+        <ul>
+            <li id="home">home</li>
+            <li id="about">about</li>
+        </ul>
+    </section>
+    <script>
+
+        window.onload = function () {
+            document.querySelector("body section:nth-of-type(4) > h2 > span").style.color = "red"
+        }
+
+    </script>
+</body>
+
+</html>

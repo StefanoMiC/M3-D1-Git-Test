@@ -1,0 +1,267 @@
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500;700&family=Montserrat:wght@400;700&display=swap");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin-top: 0;
+}
+
+body {
+  background: #f5f5f5;
+  color: #18314f;
+  font-family: "EB Garamond", serif;
+  font-size: 1.5rem;
+}
+
+p {
+  font-family: "Montserrat", sans-serif;
+}
+
+h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  letter-spacing: 6px;
+  line-height: 1;
+  font-weight: 400;
+  margin: 3em 0;
+}
+
+h2 {
+  font-weight: 400;
+  text-transform: uppercase;
+  font-size: 1.1rem;
+  margin-bottom: 3em;
+  letter-spacing: 8px;
+  text-align: center;
+  color: #8bc34a;
+}
+
+h2 span {
+  font-size: 5em;
+  font-weight: 700;
+  display: block;
+  color: #18314f;
+}
+
+a {
+  color: #8bbeb2;
+}
+a:hover {
+  color: #7ae7c7;
+}
+
+section {
+  background: white;
+  box-shadow: 0 7px 10px -10px rgb(0 0 0 / 25%);
+  width: 80%;
+  margin: 50px auto;
+  padding: 50px;
+  border-radius: 20px;
+  border: 3px solid #98ca60ba;
+}
+
+.the-ones-you-know code {
+  font-weight: 600;
+}
+
+.universal code {
+  background: #d1ecef;
+  padding: 0.25em;
+}
+
+.direct-children .example {
+  padding: 1em;
+  background: #d1ecef;
+}
+
+.direct-children .example p {
+  margin: 0;
+}
+
+.adjacent-sibling,
+.general-sibling,
+.child-selector,
+.before-after {
+  text-align: center;
+}
+
+.adjacent-sibling .box,
+.general-sibling .box,
+.child-selector .box,
+.before-after .box {
+  height: 75px;
+  width: 75px;
+  background: rgba(0, 0, 0, 0.5);
+  display: inline-block;
+}
+
+.inputs label {
+  display: block;
+}
+
+.inputs input {
+  border-radius: 6px;
+  border-width: 1px;
+  padding: 0.5rem 1rem;
+  width: 100%;
+  border-color: rgba(0, 0, 0, 0.5);
+  margin-bottom: 1rem;
+}
+
+.target-selector ul {
+  list-style: none;
+  margin-top: 1rem;
+}
+
+/* =================================
+   Universal 
+   ================================= */
+.universal > * {
+  color: red;
+}
+
+/* =================================
+   Direct children
+   ================================= */
+.direct-children > p {
+  color: red;
+}
+/* =================================
+   Adjacent siblings
+   ================================= */
+
+.adjacent-sibling .box + .box {
+  background-color: red;
+}
+
+.adjacent-sibling h4 + p {
+  color: blue;
+  font-size: 0.85rem;
+}
+
+/* =================================
+   General siblings
+   ================================= */
+
+.general-sibling .box ~ .box {
+  background-color: red;
+}
+
+.general-sibling a ~ p:not(div + p) {
+  color: red;
+}
+
+/* =================================
+   Child Selector
+   ================================= */
+
+.child-selector .box:first-of-type {
+  background-color: green;
+}
+.child-selector .box:nth-of-type(3n) {
+  background-color: red;
+}
+.child-selector .box:last-of-type {
+  background-color: blue;
+}
+
+/* example of selection without any particular class or id as reference */
+/* body section:nth-of-type(4) > h2 ~ div.box {
+  background-color: coral;
+} */
+
+/* =================================
+   Before / After
+   ================================= */
+
+/* .before-after .box::before {
+  content: "<<";
+  color: red;
+}
+.before-after .box::after {
+  content: ">>";
+  color: green;
+} */
+
+.before-after .box {
+  position: relative;
+}
+
+.before-after .box:hover {
+  color: red;
+}
+
+.before-after .box:hover::before {
+  content: "";
+  position: absolute;
+  background-color: red;
+  width: 100%;
+  height: 100%;
+  left: -80px;
+}
+.before-after .box:hover::after {
+  content: "";
+  background-color: green;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: -80px;
+}
+
+/* =================================
+   Attributes
+   ================================= */
+/* .attribute a[href="https://www.google.com"], 
+.attribute a[class="link-two"] {
+  color: red;
+}
+.attribute a[class|="link"] {
+  color: blueviolet;
+}
+.attribute a[class|="another"] {
+  color: yellowgreen;
+} */
+.attribute a[href^="https"] {
+  color: green;
+}
+
+.attribute a[href^="http://"]
+{
+  color: red;
+}
+.attribute a[href$=".pdf"] {
+  color: blue;
+}
+/* =================================
+   Inputs
+   ================================= */
+
+.inputs input[placeholder~="username" i] {
+  border-color: blue;
+  border-width: 2px;
+}
+
+.inputs input[checked] {
+  margin-left: 20px;
+}
+
+.inputs input:in-range {
+  border: 3px solid green;
+}
+.inputs input:out-of-range {
+  border: 3px solid red;
+}
+
+/* =================================
+   Target Selector
+   ================================= */
+.target-selector ul li {
+  display: none;
+}
+.target-selector ul li:target {
+  background-color: #d1ecef;
+  display: block;
+}
